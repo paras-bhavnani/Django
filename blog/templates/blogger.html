@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+        <div class="post block">
+            <h2 class="subtitle">Athor Name : {{ author.user.username }}</h2>
+
+            <p>Author Bio :{{ author.author_bio }}</p>
+
+            <small>Author id {{ author.user.id }}</small>
+            <br>
+            <br>
+            <p>Blogs by {{ author.user.username }} -</p>
+            {%for item in posts%}
+            <br>
+                <h2> Post Name : <a href="/blog/{{item.id}}">{{ item.title }} </a></h2>
+                <p>Content : {{ item.body }}</p>
+            {% endfor %}
+        </div>
+        
+        
+{% endblock %}
